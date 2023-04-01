@@ -8,6 +8,11 @@ Array.from(buttons).forEach((button)=>{
             inputString = eval(inputString);
             document.querySelector('input').value = inputString;
         }
+        else if(e.target.innerHTML == 'C')
+        {
+            inputString = '';
+            document.querySelector('input').value = inputString;
+        }
         else{
         // console.log(e.target);
         inputString+= e.target.innerHTML;
