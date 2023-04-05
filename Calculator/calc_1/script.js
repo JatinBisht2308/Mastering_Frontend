@@ -4,6 +4,19 @@ let buttons = document.querySelectorAll(".button");
 Array.from(buttons).forEach((button) => {
   button.addEventListener("click", (e) => {
     if (e.target.innerHTML == "=") {
+        if(inputString.includes('%'))
+        {
+            // iafp -> input array for percentage
+          const iafp = inputString.split("%");
+          console.log(iafp);
+          inputString = (iafp[0]*iafp[1])/100;
+          document.querySelector("input").value = inputString;
+        }
+        else if(inputString.includes('$'))
+        {
+            // we will convert the dollar(new zealand) amount to the inr amount 
+
+        }
       inputString = eval(inputString);
       document.querySelector("input").value = inputString;
     } else if (e.target.innerHTML == "C") {
@@ -16,12 +29,8 @@ Array.from(buttons).forEach((button) => {
     } else if (e.target.innerHTML == "AC") {
       inputString = "";
       document.querySelector("input").value = inputString;
-    } else if (e.target.innerHTML == "") {
-    } else if (e.target.innerHTML == "") {
     } else {
-      // console.log(e.target);
       inputString += e.target.innerHTML;
-      // console.log(inputString);
       document.querySelector("input").value = inputString;
     }
   });
