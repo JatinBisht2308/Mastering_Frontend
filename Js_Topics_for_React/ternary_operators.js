@@ -13,3 +13,10 @@ console.log(name);
 let newAge = 5;
 let newName = newAge > 10 ? "Jatin" : "Pedro";
 console.log(newName);
+
+// take an example of react
+const Component = () =>{
+    return 
+            age > 10 ? <h1>Jatin is here</h1> : <h1>Pedro is here</h1>
+;
+}
