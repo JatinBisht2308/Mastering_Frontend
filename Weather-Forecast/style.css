@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=Nunito:wght@400;700&family=Open+Sans:ital,wght@1,300&family=Poppins&family=Roboto&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* initializing the css variable for color */
+:root{
+    /* colors for the background */
+    --PRIMARY-BG-COLOR: #0a2348;
+    --SECONDARY-BG-COLOR: #f3f7f7;
+    --LIGHT-BG-COLOR: #fff;
+
+    /* colors for the text */
+    --PRIMARY-TEXT-COLOR: #0a2348;
+    --SECONDARY-TEXT-COLOR: #fff;
+     --LIGHT-TEXT: #f4f4f4;
+
+    /* size for the font */
+     --SMALL-TEXT: 14px;
+    --LETTER-SPACING: 0.8px;
+
+      /* STANDERED SIZE AND PADDINGS */
+    --STANDERED-PADDING: 30px 40px;
+    --STANDERED-RADIUS: 20px;
+}
+.container{
+    background: cyan;
+    width: 100%;
+    display: flex;
+}
+.main-weather-report{
+    background: yellow;
+    width: 80%;
+}
+.sidebar{
+    background: orange;
+    width: 20%;
+}
