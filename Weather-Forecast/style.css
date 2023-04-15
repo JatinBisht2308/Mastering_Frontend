@@ -9,7 +9,7 @@
 /* initializing the css variable for color */
 :root{
     /* colors for the background */
-    --PRIMARY-BG-COLOR: #0a2348;
+    --PRIMARY-BG-COLOR: #fff;
     --SECONDARY-BG-COLOR: #f3f7f7;
     --LIGHT-BG-COLOR: #fff;
 
@@ -32,10 +32,10 @@
     display: flex;
 }
 .main-weather-report{
-    background: yellow;
-    width: 80%;
+    background: var(--PRIMARY-BG-COLOR);
+    width: 75%;
 }
 .sidebar{
-    background: orange;
-    width: 20%;
+    background: var(--SECONDARY-BG-COLOR);
+    width: 25%;
 }
