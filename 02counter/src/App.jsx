@@ -9,12 +9,16 @@ function App() {
       <h1>Chai or react</h1> 
       <h2>Counter value: {value}</h2>     
       <button onClick={() =>{
-        setValue(value+1);
+        if(value < 20)
+        {
+          setValue(value+1);
+        }
       }}>Add value</button>
       <br />
       <br />
       <button
       onClick={() =>{
+        if(value>0)
         setValue(value-1);
       }}
       >Minus value</button>
