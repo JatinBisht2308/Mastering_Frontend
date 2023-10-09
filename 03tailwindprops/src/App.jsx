@@ -14,7 +14,7 @@ function App() {
       {/* you cannot pass array from here you have to declare it as a variable then you can pass it in props either array or object */}
       {/* <Card name="Jatin" myArr=[1,2,3,4] /> myObj={college:"DIT University"} */}
       {/* rather than it you can set the array as variable then pass it here in the props */}
-      <Card name="Riya" myArr={myArr} myObj={myObj} />
+      <Card name="Jatin" myArr={myArr} myObj={myObj} btnText="click me" />
     </>
   );
 }
