@@ -11,7 +11,14 @@ function App() {
       <button onClick={() =>{
         if(value < 20)
         {
-          setValue(value+1);
+          // what will happen if we set the value three times will it increase three times se the reason in the notes if not then how can we acheive it.
+          // setValue(value+1);
+          // setValue(value+1);
+          // setValue(value+1);
+          // the below code tells how we do that
+          setValue((previousValue) => previousValue +1);
+          setValue((previousValue) => previousValue +1);
+          setValue((previousValue) => previousValue +1);
         }
       }}>Add value</button>
       <br />

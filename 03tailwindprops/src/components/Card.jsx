@@ -1,4 +1,5 @@
-const Card = ({ name, myArr, myObj, btnText="visit me" }) => {
+// in the below props block btnText="visit me" is basically the default value if the developer forgets to pass the value of btnText then visit me will be shown
+const Card = ({ name = "User", myArr, myObj, btnText = "visit me" }) => {
   console.log("props", name);
   return (
     <div>
