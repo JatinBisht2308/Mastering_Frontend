@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import "./App.css";
 
 function App() {
@@ -6,6 +6,8 @@ function App() {
   const [numbersPresent, setNumberPresent] = useState(false);
   const [characterPresent, setCharacterPresent] = useState(false);
   const [password, setPassword] = useState("");
+  // useRef hook
+  const passwordRef = useRef(null);
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -17,12 +19,19 @@ function App() {
       let c = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(c);
     }
-    console.log(pass.length + " characters passed "+ pass);
+    console.log(pass.length + " characters passed " + pass);
     setPassword(pass);
   }, [numbersPresent, characterPresent, length]);
   useEffect(() => {
     passwordGenerator();
   }, [numbersPresent, characterPresent, length, passwordGenerator]);
+
+  const copyPasswordToClipboard = () =>{
+    // ? is used to check that the current ref is not null
+    passwordRef.current?.select();
+    // copy to clipboard
+    window.navigator.clipboard.writeText(password);
+  }
 
   return (
     <div className="w-screen h-screen flex justify-center items-center">
@@ -32,8 +41,12 @@ function App() {
             type="text"
             className=" p-2 rounded-l-md w-full text-orange-400 text-md border-none font-semibold"
             value={password}
+            ref={passwordRef}
           />
-          <button className="bg-blue-500 p-2 rounded-r-md text-white">
+          <button
+            className="bg-blue-500 p-2 rounded-r-md text-white"
+            onClick={copyPasswordToClipboard}
+          >
             copy
           </button>
         </div>
