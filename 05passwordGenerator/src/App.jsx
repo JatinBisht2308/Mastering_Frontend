@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useCallback } from "react";
 import "./App.css";
 
 function App() {
@@ -7,24 +7,23 @@ function App() {
   const [characterPresent, setCharacterPresent] = useState(false);
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    const password = "jatin bisht";
-    if (numbersPresent && characterPresent) {
-      setPassword("j595%3#2@3#9(6^3#");
-    } else if (numbersPresent || characterPresent) {
-      if (numbersPresent) {
-        setPassword("j5a3t2i3n9");
-      } else {
-        setPassword("5%3#2@3#9(6^3#");
-      }
-    } else {
-      setPassword(password);
+  const passwordGenerator = useCallback(() => {
+    let pass = "";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    if (numbersPresent) str += "0123456789";
+    if (characterPresent) str += "!@#$%^&*";
+
+    for (let i = 0; i < length; i++) {
+      let c = str[Math.floor(Math.random() * (str.length() + 1))];
+      pass += c;
     }
+    console.log(pass);
+    setPassword(pass);
   }, [numbersPresent, characterPresent, length]);
 
   return (
-    <div className="w-full h-screen flex content-center items-center">
-      <div className="fixed flex flex-wrap flex-col content-center text-white backdrop-blur-sm bg-white/20 px-10 p-10 rounded-xl">
+    <div className="w-screen h-screen flex justify-center items-center">
+      <div className="flex flex-wrap flex-col content-center text-white backdrop-blur-sm bg-white/20 px-10 p-10 rounded-xl">
         <div className="flex text-black w-full mb-2">
           <input
             type="text"
