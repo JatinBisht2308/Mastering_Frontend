@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -13,13 +13,16 @@ function App() {
     if (numbersPresent) str += "0123456789";
     if (characterPresent) str += "!@#$%^&*";
 
-    for (let i = 0; i < length; i++) {
-      let c = str[Math.floor(Math.random() * (str.length() + 1))];
-      pass += c;
+    for (let i = 1; i <= length; i++) {
+      let c = Math.floor(Math.random() * str.length + 1);
+      pass += str.charAt(c);
     }
-    console.log(pass);
+    console.log(pass.length + " characters passed "+ pass);
     setPassword(pass);
   }, [numbersPresent, characterPresent, length]);
+  useEffect(() => {
+    passwordGenerator();
+  }, [numbersPresent, characterPresent, length, passwordGenerator]);
 
   return (
     <div className="w-screen h-screen flex justify-center items-center">
@@ -35,8 +38,17 @@ function App() {
           </button>
         </div>
         <div className="flex ">
-          <input type="range" name="lengthRange" id="lr" className="mr-2" />
-          <p className="mr-4">Length {length}</p>
+          <input
+            type="range"
+            name="lengthRange"
+            min={6}
+            max={50}
+            id="lr"
+            className="mr-2"
+            onChange={(e) => setLength(e.target.value)}
+            value={length}
+          />
+          <label className="mr-4">Length {length}</label>
           <input
             type="checkbox"
             name="number"
