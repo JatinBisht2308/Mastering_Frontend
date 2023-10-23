@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-white border-y">
@@ -39,7 +39,7 @@ const Footer = () => {
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/hiteshchoudhary"
+                    href="https://github.com/JatinBisht2308"
                     className="hover:underline"
                     target="_blank"
                     rel="noreferrer"
@@ -77,8 +77,11 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center">
             © 2023
-            <a href="https://hiteshchoudhary.com/" className="hover:underline">
-              hiteshchoudhary
+            <a
+              href="https://jatin-bisht-portfolio.netlify.app/"
+              className="hover:underline"
+            >
+              jatinbisht
             </a>
             . All Rights Reserved.
           </span>
