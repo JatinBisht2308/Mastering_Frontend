@@ -1,11 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { RouterProvider, createBrowserRouter, Route,createRoutesFromElements } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  Route,
+  createRoutesFromElements,
+} from "react-router-dom";
 import Layout from "./Layout.jsx";
 import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
 import Contact from "./components/ContactUs/Contact.jsx";
+import User from "./components/User/User";
 
 // const router = createBrowserRouter([
 //   {
@@ -35,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="" element={<Home />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="user/:userid" element={<User />} />
     </Route>
   )
 );
